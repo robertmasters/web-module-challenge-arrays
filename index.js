@@ -311,8 +311,43 @@ var regionalFlavors = ["Pink Bubblegum",
     
     // forExample, getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].   
 
-function getRandomFlavors(array1, array2, array3){
-    
-    /*code here*/
+function getRandomFlavors(array1, array2, array3, array4){
+    var theWorksArray = []; var temp =[];
 
+    // the task had predifined the array size, so no need to use an array.length here
+    for (let i = 0; i<10;i++ ){ 
+
+        // gets a number at random from 1-4 to select out of the 4 arrays that where passed through the function.
+        let randomArrayNumber = Math.floor(Math.random()*Math.floor(4)); 
+        
+        //if else - decides which array to choose based on the number randomly generated from 1-4
+        if (randomArrayNumber === 1){
+            temp = array1;
+        } else if (randomArrayNumber === 2){
+            temp = array2;
+        } else if (randomArrayNumber === 3){
+            temp = array3;
+        } else if (randomArrayNumber === 4){
+            temp = array4;
+        } 
+
+        //randomIndex uses the random method to get a random index out of the array that was chosen. the .floor(..length) allows this to limit its random numbers according to the max number of indexes in the randomly chosen array.
+        let randomIndex = Math.floor(Math.random()*Math.floor(temp.length));
+        theWorksArray.push(temp[randomIndex])
+
+        console.log(theWorksArray[i]);
+    }
+
+    return theWorksArray
 }
+
+//***test code****
+// var a = ['a','b','c','d','e','f','j'];
+// var b = ['toe','leg','head','finger','eye','hair','elbow'];
+// var c = ['honda','toyota','ferrari','scion','izuzu','chevy','jeep'];
+// var d = ['1','2','3','4','5','6','7'];
+
+// var newRandom = getRandomFlavors(a,b,c,d);
+// console.log(newRandom);
+
+
