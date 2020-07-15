@@ -132,7 +132,7 @@ function removeFlavorByName(arr, name){
             arr.splice(i,1); //takes the index i and deletes it;
         }
     }
-    return arr; // returns array with deleted item
+    return arr; // returns array without deleted item
 }
 removeFlavorByName(originalFlavors, 'Vanilla');
 console.log(originalFlavors);
@@ -187,7 +187,7 @@ function filterByWord(arr, word){
 
 
 var worldChocolateDay = filterByWord(originalFlavors, 'Chocolate');
-console.log(worldChocolateDay)
+console.log(worldChocolateDay);
 
 
 console.log('----------------');
@@ -338,7 +338,7 @@ function getRandomFlavors(array1, array2, array3, array4){
         console.log(theWorksArray[i]);
     }
 
-    return theWorksArray
+    return theWorksArray;
 }
 
 //***test code****
