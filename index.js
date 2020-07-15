@@ -207,7 +207,9 @@ function getAverageWordLength(arr){
     
     let count = 0;
     for(let i=0; i<arr.length;i++){
-        console.log(arr[i].split(' ')) // displays on the console how the words are divided
+
+        // console.log(arr[i].split(' ')) // displays on the console how the words are divided for testing
+
         count += arr[i].split(' ').length; //  ..split uses the ' ' as a point to split words and divides them using a comma. then the .length gets the count of that split.
     }
     return count/arr.length;
@@ -315,7 +317,7 @@ function getRandomFlavors(array1, array2, array3, array4){
     var theWorksArray = []; var temp =[];
 
     // the task had predifined the array size, so no need to use an array.length here
-    for (let i = 0; i<10;i++ ){ 
+    for (let i = 0; i<31;i++ ){ 
 
         // gets a number at random from 1-4 to select out of the 4 arrays that where passed through the function.
         let randomArrayNumber = Math.floor(Math.random()*Math.floor(4)); 
@@ -333,13 +335,17 @@ function getRandomFlavors(array1, array2, array3, array4){
 
         //randomIndex uses the random method to get a random index out of the array that was chosen. the .floor(..length) allows this to limit its random numbers according to the max number of indexes in the randomly chosen array.
         let randomIndex = Math.floor(Math.random()*Math.floor(temp.length));
-        theWorksArray.push(temp[randomIndex])
+        console.log(randomIndex);
 
-        console.log(theWorksArray[i]);
+        theWorksArray.push(temp[randomIndex]);
+
+        // console.log(theWorksArray[i]); for testing each iteration
     }
 
     return theWorksArray;
 }
+
+
 
 //***test code****
 // var a = ['a','b','c','d','e','f','j'];
@@ -350,4 +356,7 @@ function getRandomFlavors(array1, array2, array3, array4){
 // var newRandom = getRandomFlavors(a,b,c,d);
 // console.log(newRandom);
 
+
+var newRandomness = getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors);
+console.log(newRandomness);
 
